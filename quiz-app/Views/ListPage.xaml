@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quiz_app.Views.ListPage"
+             xmlns:local="clr-namespace:quiz_app"
+             Title="My Sets">
+    <StackLayout>
+        <Label Text="Welcome to your study materials"
+               HorizontalOptions="Center"/>
+        <CollectionView>
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type local:StudySet}">
+                    <local:StudySet studyset="biology 101" />
+                    <local:StudySet studyset="geology 101" />
+                    <local:StudySet studyset="anthropology 101" />
+                    <local:StudySet studyset="swagology 101" />
+                </x:Array>
+            </CollectionView.ItemsSource>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
