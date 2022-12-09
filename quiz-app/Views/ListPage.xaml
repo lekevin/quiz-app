@@ -7,7 +7,22 @@
     <StackLayout>
         <Label Text="Welcome to your study materials"
                HorizontalOptions="Center"/>
-        <ListView>
+
+        <CollectionView ItemsSource="{Binding SetTest}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding qID}" />
+                            <Label Text="{Binding Question}" />
+                            <Label Text="{Binding Answer}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!--<ListView>
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:StudySet}">
                     <local:StudySet studyset="biology 101" />
@@ -41,19 +56,11 @@
                                           RowSpacing="-2"
                                           VerticalOptions="End"/>
                                 </Grid>
-                                <!--<Label Text="{Binding studyset}"
-                                        Padding="10"/>
-                                <Label Text="{Binding questionAmt}" 
-                                        Padding="10"/>
-                                <Label Text="{Binding description}" 
-                                        Padding="10"/>
-                                <Label Text="{Binding status}" 
-                                        Padding="10"/>-->
                             </Grid>
                         </ScrollView>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
     </StackLayout>
 </ContentPage>

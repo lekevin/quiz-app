@@ -6,7 +6,7 @@ namespace quiz_app;
 
 public class QuizDatabase
 {
-	static SQLiteAsyncConnection Database;
+	SQLiteAsyncConnection Database;
 
 	public QuizDatabase()
 	{
@@ -27,21 +27,6 @@ public class QuizDatabase
         return await Database.Table<QuizItem>().ToListAsync();
     }
 
-    public async Task<List<QuizItem>> GetItemsNotDoneAsync()
-    {
-        await Init();
-        return await Database.Table<QuizItem>().Where(t => t.Done).ToListAsync();
-
-        // SQL queries are also possible
-        //return await Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-    }
-
-    public async Task<QuizItem> GetItemAsync(int id)
-    {
-        await Init();
-        return await Database.Table<QuizItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
-    }
-
     public async Task<int> SaveItemAsync(QuizItem item)
     {
         await Init();
@@ -55,6 +40,18 @@ public class QuizDatabase
     {
         await Init();
         return await Database.DeleteAsync(item);
+    }
+
+    public async Task<List<QuizItem>> GetQuestionsAsync()
+    {
+        await Init();
+        return await Database.QueryAsync<QuizItem>("SELECT Questions FROM [QuizItem]");
+    }
+
+    public async Task<List<QuizItem>> GetAnswersAsync()
+    {
+        await Init();
+        return await Database.QueryAsync<QuizItem>("SELECT Answers FROM [QuizItem]");
     }
 }
 
