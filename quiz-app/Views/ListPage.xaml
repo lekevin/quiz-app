@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="quiz_app.Views.ListPage"
@@ -27,27 +27,31 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid
-                        ColumnDefinitions="*, *"
-                        ColumnSpacing="30"
-                        VerticalOptions="FillAndExpand">
-                        <Grid Grid.Column="0" RowSpacing="30">
-                            <BoxView Grid.Row="0" HeightRequest="250" />
-                            <Grid Grid.Row="0"
-                                  Margin="22, 34, 22, 18"
-                                  RowDefinitions="*, *"
-                                  RowSpacing="-2"
-                                  VerticalOptions="End"/>
-                        </Grid>
-                        <!--<Label Text="{Binding studyset}"
-                                Padding="10"/>
-                        <Label Text="{Binding questionAmt}" 
-                                Padding="10"/>
-                        <Label Text="{Binding description}" 
-                                Padding="10"/>
-                        <Label Text="{Binding status}" 
-                                Padding="10"/>-->
-                    </Grid>
+                    <ViewCell>
+                        <ScrollView>
+                            <Grid
+                                ColumnDefinitions="*, *"
+                                ColumnSpacing="30"
+                                VerticalOptions="FillAndExpand">
+                                <Grid Grid.Column="0" RowSpacing="30">
+                                    <BoxView Grid.Row="0" HeightRequest="250" />
+                                    <Grid Grid.Row="0"
+                                          Margin="22, 34, 22, 18"
+                                          RowDefinitions="*, *"
+                                          RowSpacing="-2"
+                                          VerticalOptions="End"/>
+                                </Grid>
+                                <!--<Label Text="{Binding studyset}"
+                                        Padding="10"/>
+                                <Label Text="{Binding questionAmt}" 
+                                        Padding="10"/>
+                                <Label Text="{Binding description}" 
+                                        Padding="10"/>
+                                <Label Text="{Binding status}" 
+                                        Padding="10"/>-->
+                            </Grid>
+                        </ScrollView>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
