@@ -9,7 +9,7 @@ public partial class HomePage : ContentPage
 
     public async void OnContinueTapped(object sender, EventArgs e)
     {
-       // await Shell.Current.GoToAsync("StudyPage");
+       await Shell.Current.GoToAsync("ListPage");
 
     }
 }

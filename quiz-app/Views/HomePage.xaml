@@ -20,12 +20,16 @@
                     <TapGestureRecognizer Tapped="OnContinueTapped"/>
                 </BoxView.GestureRecognizers>
             </BoxView>
-            <Label FontSize="35"
-                   Text="&#129042;"
-                   TextColor="White"
+            <Image Source="arrow.png"
+                   HeightRequest="40"
+                   BackgroundColor="Transparent"
                    Margin="0, 0, 7, 3"
                    HorizontalOptions="End"
-                   VerticalOptions="End"/>
+                   VerticalOptions="End">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnContinueTapped"/>
+                </Image.GestureRecognizers>
+            </Image>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

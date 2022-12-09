@@ -4,6 +4,7 @@ public partial class StudyPage : ContentPage
 	public StudyPage()
 	{
 		InitializeComponent();
+
 	}
 
     private void OnCardTapped(object sender, EventArgs e)
