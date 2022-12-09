@@ -2,22 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="quiz_app.Views.HomePage"
-             Title="Home">
-    <StackLayout BackgroundColor="#36213E"
-                 Padding="100"
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand">
-        <VerticalStackLayout>
-            <Button 
-            Text="{Binding quest}"
-            FontSize="100"
-            TextColor="Black"
-            FontFamily="Helvetica"
-            BackgroundColor="#36213E"
-            VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="CenterAndExpand"
-            BorderWidth="3"
-            BorderColor="#82D682"/>
-        </VerticalStackLayout>
-    </StackLayout>
+             Title="Home"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Aspect="AspectFill" Source="rocket.png"/>
+            <BoxView
+                Color="#2C346C"
+                Margin="0, 0, -6, -6"
+                CornerRadius="10"
+                HeightRequest="60"
+                WidthRequest="60"
+                HorizontalOptions="End"
+                VerticalOptions="End">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnContinueTapped"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <Label FontSize="35"
+                   Text="&#129042;"
+                   TextColor="White"
+                   Margin="0, 0, 7, 3"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

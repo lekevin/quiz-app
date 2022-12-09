@@ -10,15 +10,17 @@ public partial class StudyPage : ContentPage
     {
         var label = sender as Label;
 
-        if (Color.FromHex("#554971").Equals(Color.FromHex(label.BackgroundColor.ToString())))
+        if (label.BackgroundColor == Colors.Lavender)
         {
-            label.RotateYTo(360, 200);
-            label.BackgroundColor = Colors.LightGray;
-            label.Text = "sup bruh";
+            label.RotateXTo(360, 300);
+            label.BackgroundColor = Colors.White;
+            label.Text = "one";
         }
         else
         {
-            // Background color is not #554971
+            label.RotateXTo(360, 300);
+            label.Text = "two";
+            label.BackgroundColor = Colors.Lavender;
         }
 
     }

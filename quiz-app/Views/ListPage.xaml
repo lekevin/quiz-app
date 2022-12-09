@@ -7,23 +7,49 @@
     <StackLayout>
         <Label Text="Welcome to your study materials"
                HorizontalOptions="Center"/>
-        <CollectionView>
-            <CollectionView.ItemsSource>
+        <ListView>
+            <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:StudySet}">
                     <local:StudySet studyset="biology 101" />
                     <local:StudySet studyset="geology 101" />
-                    <local:StudySet studyset="anthropology 101" />
                     <local:StudySet studyset="swagology 101" />
+                    <local:StudySet questionAmt="10" />
+                    <local:StudySet questionAmt="20" />
+                    <local:StudySet questionAmt="69" />
+                    <local:StudySet description="i love this class sooo much" />
+                    <local:StudySet description="freaking cool awesome dope" />
+                    <local:StudySet description="yes yes yes awesome cool" />
+                    <local:StudySet status="complete" />
+                    <local:StudySet status="not done" />
+                    <local:StudySet status="complete" />
                 </x:Array>
-            </CollectionView.ItemsSource>
+            </ListView.ItemsSource>
 
-            <CollectionView.ItemTemplate>
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <VerticalStackLayout>
-                        
-                    </VerticalStackLayout>
+                    <Grid
+                        ColumnDefinitions="*, *"
+                        ColumnSpacing="30"
+                        VerticalOptions="FillAndExpand">
+                        <Grid Grid.Column="0" RowSpacing="30">
+                            <BoxView Grid.Row="0" HeightRequest="250" />
+                            <Grid Grid.Row="0"
+                                  Margin="22, 34, 22, 18"
+                                  RowDefinitions="*, *"
+                                  RowSpacing="-2"
+                                  VerticalOptions="End"/>
+                        </Grid>
+                        <!--<Label Text="{Binding studyset}"
+                                Padding="10"/>
+                        <Label Text="{Binding questionAmt}" 
+                                Padding="10"/>
+                        <Label Text="{Binding description}" 
+                                Padding="10"/>
+                        <Label Text="{Binding status}" 
+                                Padding="10"/>-->
+                    </Grid>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

@@ -7,24 +7,24 @@
     <StackLayout BackgroundColor="#554971"
               HorizontalOptions="CenterAndExpand"
               VerticalOptions="CenterAndExpand"
-              Padding="0">
+              Padding="20">
         <Border StrokeShape="RoundRectangle 30">
             <Border.Shadow>
                 <Shadow  Brush="Black"
-                                     Offset="10, 10"
-                                     Opacity=".25"/>
+                         Offset="10, 10"
+                         Opacity=".25"/>
             </Border.Shadow>
-            <Label  Text="How much wood could a woodchuck chuck if a woodchuck could chuck wood?"
+            <Label   Text="How much wood could a woodchuck chuck if a woodchuck could chuck wood?"
+                     HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Center"
                      FontSize="30"
                      Padding="70"
                      TextColor="Black"
                      FontFamily="Helvetica"
-                     BackgroundColor="#63768D"
-                     VerticalOptions="CenterAndExpand" 
-                     HorizontalOptions="CenterAndExpand"
+                     BackgroundColor="Lavender"
+                     WidthRequest="1000"
                      HeightRequest="550"
-                     LineBreakMode='WordWrap'
-                     >
+                     LineBreakMode='WordWrap'>
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnCardTapped" />
                 </Label.GestureRecognizers>

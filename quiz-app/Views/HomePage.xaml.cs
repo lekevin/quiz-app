@@ -6,4 +6,10 @@ public partial class HomePage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    public async void OnContinueTapped(object sender, EventArgs e)
+    {
+       // await Shell.Current.GoToAsync("StudyPage");
+
+    }
 }
