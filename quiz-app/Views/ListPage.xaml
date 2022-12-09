@@ -11,13 +11,11 @@
         <CollectionView ItemsSource="{Binding SetTest}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding qID}" />
-                            <Label Text="{Binding Question}" />
-                            <Label Text="{Binding Answer}" />
-                        </StackLayout>
-                    </ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding qID}" />
+                        <Label Text="{Binding Question}" />
+                        <Label Text="{Binding Answer}" />
+                    </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

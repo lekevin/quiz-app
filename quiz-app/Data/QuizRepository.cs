@@ -1,5 +1,7 @@
 ﻿using System;
 using QuizSQLite.Models;
+using System.IO;
+using System.Collections.Generic;
 using SQLite;
 
 namespace quiz_app
@@ -8,7 +10,7 @@ namespace quiz_app
 	{
 		private readonly SQLiteConnection _database;
 
-		public static string DbPath { get; } =
+        public static string DbPath { get; } =
 			Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mockquizset.db");
 
 		public QuizRepository()

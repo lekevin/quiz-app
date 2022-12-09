@@ -4,7 +4,7 @@ public partial class HomePage : ContentPage
 {
 	public HomePage()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
 
     public async void OnContinueTapped(object sender, EventArgs e)

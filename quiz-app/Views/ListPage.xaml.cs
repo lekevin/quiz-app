@@ -1,8 +1,13 @@
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using QuizSQLite.Models;
-using System.Runtime.CompilerServices;
 namespace quiz_app.Views;
 
 public partial class ListPage : ContentPage
@@ -15,22 +20,20 @@ public partial class ListPage : ContentPage
 
         var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
 
-        using (Stream stream =
-            assembly.GetManifestResourceStream("quiz_app.mockquizset.db"))
+        using (Stream stream = assembly.GetManifestResourceStream("quiz_app.mockquizset.db"))
         {
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 stream.CopyTo(memoryStream);
-
-                File.WriteAllBytes(QuizRepository.DbPath,
-                    memoryStream.ToArray());
+                File.WriteAllBytes(QuizRepository.DbPath, memoryStream.ToArray());
             }
         }
 
         QuizRepository repository = new QuizRepository();
-        foreach (var quizsettestitem in repository.List())
+
+        foreach (var quizsettest in repository.List())
         {
-            SetTest.Add(quizsettestitem);
+            SetTest.Add(quizsettest);
         }
 
         BindingContext = this;
