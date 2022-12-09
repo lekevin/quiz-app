@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
           x:Class="quiz_app.Views.StudyPage"
           Title="Study" 
-          BackgroundColor="#554971">
-    <StackLayout BackgroundColor="#554971"
+          BackgroundColor="{DynamicResource Secondary}">
+    <StackLayout BackgroundColor="{DynamicResource Secondary}"
               HorizontalOptions="CenterAndExpand"
               VerticalOptions="CenterAndExpand"
               Padding="0">
@@ -17,9 +17,9 @@
             <Label  Text="How much wood could a woodchuck chuck if a woodchuck could chuck wood?"
                      FontSize="30"
                      Padding="70"
-                     TextColor="Black"
+                     TextColor="{DynamicResource DefaultTextColor}"
                      FontFamily="Helvetica"
-                     BackgroundColor="#63768D"
+                     BackgroundColor="{DynamicResource Tertiary}"
                      VerticalOptions="CenterAndExpand" 
                      HorizontalOptions="CenterAndExpand"
                      HeightRequest="550"

@@ -30,6 +30,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -48,6 +51,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Resources\Styles\DefaultTheme %28copy%29.xaml" />
+	  <MauiXaml Remove="Resources\Styles\DefaultTheme %28another copy%29.xaml" />
+	</ItemGroup>
+	<ItemGroup>
 	  <MauiXaml Update="Views\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -63,4 +70,14 @@
 	  <Folder Include="Models\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Images\home_resized.png" />
+	  <None Remove="Resources\Images\list_resized.png" />
+	  <None Remove="Resources\Images\study_resized.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\home_resized.png" />
+	  <BundleResource Include="Resources\Images\list_resized.png" />
+	  <BundleResource Include="Resources\Images\study_resized.png" />
+	</ItemGroup>
 </Project>

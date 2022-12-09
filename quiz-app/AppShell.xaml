@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="quiz_app.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,22 +7,51 @@
     FlyoutHeaderBehavior="CollapseOnScroll"
     FlyoutBehavior="Flyout">
 
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="50,*" Padding="20">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White">
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="LightGray">
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Image Source="{Binding Icon}" />
+                <Label Grid.Column="1" Text="{Binding Title}" TextColor="Black" FontAttributes="Bold" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
     <Shell.FlyoutIcon>
         <FontImageSource Color="LightGrey" Size="24" Glyph="&#xf30c;"/>
     </Shell.FlyoutIcon>
 
     <FlyoutItem Title="Home"
-                Icon="home.png">
+                Icon="home_resized.png">
         <ShellContent ContentTemplate="{DataTemplate local:HomePage}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="Study"
-                Icon="study.png">
+                Icon="study_resized.png">
         <ShellContent ContentTemplate="{DataTemplate local:StudyPage}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="My Sets"
-                Icon="list.png">
+                Icon="list_resized.png">
         <ShellContent ContentTemplate="{DataTemplate local:ListPage}"/>
     </FlyoutItem>
     
