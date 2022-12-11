@@ -11,18 +11,18 @@ namespace quiz_app
 		private readonly SQLiteConnection _database;
 
         public static string DbPath { get; } =
-			Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mockquizset.db");
+			Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quizset.db");
 
-		public QuizRepository()
-		{
-			_database = new SQLiteConnection(DbPath);
-			_database.CreateTable<QuizSetTest>();
-		}
+		//public QuizRepository()
+		//{
+		//	_database = new SQLiteConnection(DbPath);
+		//	_database.CreateTable<QuizSetTest>();
+		//}
 
-		public List<QuizSetTest> List()
-		{
-			return _database.Table<QuizSetTest>().ToList();
-		}
+		//public List<QuizSetTest> List()
+		//{
+		//	return _database.Table<QuizSetTest>().ToList();
+		//}
 	}
 }
 

@@ -7,8 +7,8 @@
     <StackLayout>
         <Label Text="Welcome to your study materials"
                HorizontalOptions="Center"/>
-
-        <CollectionView ItemsSource="{Binding SetTest}">
+         <Button Text="math" Clicked="onMathSelect"/>
+        <!--<CollectionView ItemsSource="{Binding SetTest}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout>
@@ -18,8 +18,8 @@
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>
-
+        </CollectionView>-->
+       
         <!--<ListView>
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:StudySet}">

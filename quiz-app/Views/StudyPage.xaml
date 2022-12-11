@@ -7,14 +7,17 @@
     <StackLayout BackgroundColor="{DynamicResource Secondary}"
               HorizontalOptions="CenterAndExpand"
               VerticalOptions="CenterAndExpand"
-              Padding="20">
+              Padding="20"
+              >
+               
         <Border StrokeShape="RoundRectangle 30">
             <Border.Shadow>
                 <Shadow  Brush="Black"
                          Offset="10, 10"
                          Opacity=".25"/>
             </Border.Shadow>
-            <Label   Text="How much wood could a woodchuck chuck if a woodchuck could chuck wood?"
+            <Label
+                x:Name="Question"
                      HorizontalTextAlignment="Center"
                      VerticalTextAlignment="Center"
                      FontSize="30"
@@ -30,6 +33,24 @@
                     <TapGestureRecognizer Tapped="OnCardTapped" />
                 </Label.GestureRecognizers>
             </Label>
+           
         </Border>
+         <Label
+                x:Name="Answer"
+                     HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Center"
+                     FontSize="30"
+                     Padding="70"
+                     TextColor="{DynamicResource DefaultTextColor}"
+                     FontFamily="Helvetica"
+                     BackgroundColor="{DynamicResource Tertiary}"
+                     VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="CenterAndExpand"
+                     HeightRequest="550"
+                     LineBreakMode='WordWrap'>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCardTapped" />
+                </Label.GestureRecognizers>
+            </Label>
     </StackLayout>
 </ContentPage>
