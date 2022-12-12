@@ -4,61 +4,26 @@
              x:Class="quiz_app.Views.ListPage"
              xmlns:local="clr-namespace:quiz_app"
              Title="My Sets">
-    <StackLayout>
-        <Label Text="Welcome to your study materials"
-               HorizontalOptions="Center"/>
-         <Button Text="math" Clicked="onMathSelect"/>
-        <!--<CollectionView ItemsSource="{Binding SetTest}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Label Text="{Binding qID}" />
-                        <Label Text="{Binding Question}" />
-                        <Label Text="{Binding Answer}" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>-->
-       
-        <!--<ListView>
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type local:StudySet}">
-                    <local:StudySet studyset="biology 101" />
-                    <local:StudySet studyset="geology 101" />
-                    <local:StudySet studyset="swagology 101" />
-                    <local:StudySet questionAmt="10" />
-                    <local:StudySet questionAmt="20" />
-                    <local:StudySet questionAmt="69" />
-                    <local:StudySet description="i love this class sooo much" />
-                    <local:StudySet description="freaking cool awesome dope" />
-                    <local:StudySet description="yes yes yes awesome cool" />
-                    <local:StudySet status="complete" />
-                    <local:StudySet status="not done" />
-                    <local:StudySet status="complete" />
-                </x:Array>
-            </ListView.ItemsSource>
 
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ScrollView>
-                            <Grid
-                                ColumnDefinitions="*, *"
-                                ColumnSpacing="30"
-                                VerticalOptions="FillAndExpand">
-                                <Grid Grid.Column="0" RowSpacing="30">
-                                    <BoxView Grid.Row="0" HeightRequest="250" />
-                                    <Grid Grid.Row="0"
-                                          Margin="22, 34, 22, 18"
-                                          RowDefinitions="*, *"
-                                          RowSpacing="-2"
-                                          VerticalOptions="End"/>
-                                </Grid>
-                            </Grid>
-                        </ScrollView>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
+      <StackLayout>
+      <Label Text="Welcome to your study list!" FontSize="24" Margin="20" HorizontalOptions="Center"/>
+      <Grid HorizontalOptions="CenterAndExpand">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Text="Math"    Grid.Row="0" Grid.Column="0" BackgroundColor= "LightGray" Margin= "5" CornerRadius="20" Clicked="onMathSelect" FontSize="24"/>
+        <Button Text="Science" Grid.Row="1" Grid.Column="0" BackgroundColor= "LightGray" Margin= "5" CornerRadius="20" Clicked="onScienceSelect" FontSize="24"/>
+        <Button Text="English" Grid.Row="2" Grid.Column="0" BackgroundColor= "LightGray" Margin= "5" CornerRadius="20" Clicked="onEnglishSelect" FontSize="24"/>
+        <Button Text="History" Grid.Row="3" Grid.Column="0" BackgroundColor= "LightGray" Margin= "5" CornerRadius="20" Clicked="onHistorySelect" FontSize="24"/>
+      </Grid>
     </StackLayout>
+
+
 </ContentPage>
