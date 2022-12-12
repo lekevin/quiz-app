@@ -28,6 +28,7 @@
                      VerticalOptions="CenterAndExpand" 
                      HorizontalOptions="CenterAndExpand"
                      HeightRequest="550"
+                     WidthRequest="750"
                      LineBreakMode='WordWrap'>
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnCardTapped" />
@@ -35,22 +36,17 @@
             </Label>
            
         </Border>
-         <Label
-                x:Name="Answer"
-                     HorizontalTextAlignment="Center"
-                     VerticalTextAlignment="Center"
-                     FontSize="30"
-                     Padding="70"
-                     TextColor="{DynamicResource DefaultTextColor}"
-                     FontFamily="Helvetica"
-                     BackgroundColor="{DynamicResource Tertiary}"
-                     VerticalOptions="CenterAndExpand" 
-                     HorizontalOptions="CenterAndExpand"
-                     HeightRequest="550"
-                     LineBreakMode='WordWrap'>
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnCardTapped" />
-                </Label.GestureRecognizers>
-            </Label>
+         <HorizontalStackLayout Padding="20">
+             <Button Text="←"
+                     FontSize="36"
+                     Margin="300, 0, 0, 0"
+                     VerticalOptions="Center"
+                     BackgroundColor="White"/>
+             <Button Text="→"
+                    FontSize="36"
+                    Margin="0, 0, 50, 0"
+                    VerticalOptions="Center"
+                     BackgroundColor="White"/>
+         </HorizontalStackLayout>
     </StackLayout>
 </ContentPage>

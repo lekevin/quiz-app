@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:quiz_app.Views"
     FlyoutHeaderBehavior="CollapseOnScroll"
-    FlyoutBehavior="Flyout">
+    FlyoutBehavior="Flyout"
+    Shell.NavBarIsVisible="True">
 
     <Shell.ItemTemplate>
         <DataTemplate>
@@ -43,11 +44,6 @@
     <FlyoutItem Title="Home"
                 Icon="home_resized.png">
         <ShellContent ContentTemplate="{DataTemplate local:HomePage}"/>
-    </FlyoutItem>
-
-    <FlyoutItem Title="Study"
-                Icon="study_resized.png">
-        <ShellContent ContentTemplate="{DataTemplate local:StudyPage}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="My Sets"

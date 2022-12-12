@@ -21,9 +21,9 @@
             <Image Source="arrow.png"
                    HeightRequest="40"
                    BackgroundColor="Transparent"
-                   Margin="0, 0, 7, 3"
                    HorizontalOptions="End"
-                   VerticalOptions="End">
+                   VerticalOptions="End"
+                   Margin="500, 0, 0, 0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnContinueTapped"/>
                 </Image.GestureRecognizers>

@@ -29,7 +29,7 @@ public partial class StudyPage : ContentPage
     }
     public void BindData()
     {
-        this.Answer.Text = Items[questionCounter].Answer;
+        //this.Answer.Text = Items[questionCounter].Answer;
         this.Question.Text = Items[questionCounter].Question;
     }
 
@@ -46,21 +46,29 @@ public partial class StudyPage : ContentPage
        
         BindData();
     }
+    int x = 360;
+    int x2 = 300;
     private void OnCardTapped(object sender, EventArgs e)
     {
         var label = sender as Label;
+
         
+        label.RotateXTo(x, (uint)x2);
+
         if (label.BackgroundColor == Colors.Lavender)
         {
-            label.RotateXTo(360, 300);
             label.BackgroundColor = Colors.White;
-            label.Text = "one";
+            label.Text = Items[questionCounter].Answer;
+            x = 360;
+            x2 = 360;
         }
         else
         {
-            label.RotateXTo(360, 300);
-            label.Text = "two";
+
+            label.Text = Items[questionCounter].Question;
             label.BackgroundColor = Colors.Lavender;
+            x = 0;
+            x2 = 360;
         }
 
     }
