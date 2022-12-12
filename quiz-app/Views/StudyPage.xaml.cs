@@ -72,8 +72,27 @@ public partial class StudyPage : ContentPage
         }
 
     }
-    public void onNext(object sender, EventArgs e)
+    public async void onNext(object sender, EventArgs e)
     {
+        var listPage = new ListPage();
+
+        if (questionCounter == 9)
+        {
+            bool answer = await DisplayAlert("Continue?", "Choose one", "Try Again", "Go back to Study Sets");
+
+            if (answer)
+            {
+                questionCounter = 0;
+            }
+
+            else
+            {
+                //await Navigation.PushAsync(new ListPage());
+                await Navigation.PopAsync();
+                return;
+            }
+        }
+
         questionCounter++;
         this.Question.BackgroundColor = Colors.Lavender;
         BindData();
