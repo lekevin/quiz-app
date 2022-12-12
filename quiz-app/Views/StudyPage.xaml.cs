@@ -50,23 +50,23 @@ public partial class StudyPage : ContentPage
     int x2 = 300;
     private void OnCardTapped(object sender, EventArgs e)
     {
-        var label = sender as Label;
+        //var label = sender as Label;
 
         
-        label.RotateXTo(x, (uint)x2);
+        this.Question.RotateXTo(x, (uint)x2);
 
-        if (label.BackgroundColor == Colors.Lavender)
+        if (this.Question.BackgroundColor == Colors.Lavender)
         {
-            label.BackgroundColor = Colors.White;
-            label.Text = Items[questionCounter].Answer;
+            this.Question.BackgroundColor = Colors.White;
+            this.Question.Text = Items[questionCounter].Answer;
             x = 360;
             x2 = 360;
         }
         else
         {
 
-            label.Text = Items[questionCounter].Question;
-            label.BackgroundColor = Colors.Lavender;
+            this.Question.Text = Items[questionCounter].Question;
+            this.Question.BackgroundColor = Colors.Lavender;
             x = 0;
             x2 = 360;
         }
@@ -74,7 +74,17 @@ public partial class StudyPage : ContentPage
     }
     public void onNext(object sender, EventArgs e)
     {
-        quizID++;
+        questionCounter++;
+        this.Question.BackgroundColor = Colors.Lavender;
+        BindData();
+    }
+    public void onPrevious(object sender, EventArgs e)
+    {
+        if (questionCounter == 0)
+            return;
+        questionCounter--;
+
+        this.Question.BackgroundColor = Colors.Lavender;
         BindData();
     }
 }
